@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HCT IELTS Prep Course – Vocabulary Learning – Lesson 2</title>
+<style>
+:root{
+  --brand:#6a1b2a; --brand2:#86223a; --brand3:#4e1320;
+  --gold:#d4af37; --gold2:#f0c75e; --goldlt:#fbeecb;
+  --cream:#faf4ee; --white:#ffffff; --ink:#2e2230;
+  --green:#2e8b57; --red:#c0392b; --grey:#9a8f93;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Arial,sans-serif;}
+body{background:var(--cream);color:var(--ink);min-height:100vh;}
+.ar{direction:rtl;}
+
+header{background:linear-gradient(135deg,var(--brand3),var(--brand2));color:#fff;padding:28px 20px 22px;text-align:center;border-bottom:5px solid var(--gold);}
+header h1{font-size:1.6rem;letter-spacing:.5px;}
+header h1 span{color:var(--gold2);}
+header p{margin-top:6px;color:#f2d9df;font-size:.95rem;}
+.badge-target{display:inline-block;margin-top:10px;background:var(--gold);color:var(--brand3);font-weight:700;padding:5px 16px;border-radius:20px;font-size:.85rem;}
+
+.scorebar{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;background:var(--brand);padding:10px;color:#fff;font-size:.9rem;align-items:center;}
+.scorebar .stat{background:rgba(255,255,255,.12);padding:6px 14px;border-radius:18px;}
+.scorebar b{color:var(--gold2);}
+.scorebar button{background:var(--gold);color:var(--brand3);border:none;padding:6px 14px;border-radius:18px;font-weight:700;cursor:pointer;font-size:.82rem;transition:.15s;}
+.scorebar button:hover{background:var(--gold2);}
+.scorebar button.ghost{background:rgba(255,255,255,.14);color:#fff;}
+.scorebar button.ghost:hover{background:rgba(255,255,255,.24);}
+
+nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:16px 10px;background:var(--white);box-shadow:0 2px 8px rgba(0,0,0,.08);position:sticky;top:0;z-index:50;}
+.pill{border:2px solid var(--brand);background:#fff;color:var(--brand);padding:8px 16px;border-radius:25px;cursor:pointer;font-weight:600;font-size:.88rem;transition:.2s;}
+.pill:hover{background:var(--goldlt);}
+.pill.active{background:var(--brand);color:var(--gold2);}
+
+main{max-width:980px;margin:0 auto;padding:24px 16px 60px;}
+section{display:none;animation:fade .35s;}
+section.show{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.h2{color:var(--brand);font-size:1.35rem;margin-bottom:6px;border-bottom:3px solid var(--gold);display:inline-block;padding-bottom:3px;}
+.sub{color:#6b5b60;margin-bottom:18px;font-size:.95rem;}
+
+.cat-title{background:var(--brand);color:var(--gold2);padding:8px 16px;border-radius:10px;margin:22px 0 12px;font-size:1.05rem;display:flex;justify-content:space-between;align-items:center;}
+.cat-title small{color:#f2d9df;font-weight:400;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;}
+.wcard{background:#fff;border:1px solid #ecdfd0;border-left:5px solid var(--gold);border-radius:10px;padding:12px 14px;box-shadow:0 1px 4px rgba(0,0,0,.05);}
+.wcard .en{font-weight:700;color:var(--brand);font-size:1.05rem;}
+.wcard .pos{font-size:.7rem;background:var(--goldlt);color:#8a6d1a;border:1px solid var(--gold);padding:1px 8px;border-radius:10px;margin-left:6px;vertical-align:middle;}
+.wcard .arr{color:#1d6b4f;font-size:1rem;margin:4px 0;direction:rtl;text-align:right;font-weight:600;}
+.wcard .ex{font-size:.85rem;color:#6b5b60;font-style:italic;}
+.wcard .ex b{color:var(--brand);font-style:normal;}
+
+.tipbox{background:var(--goldlt);border:1px solid var(--gold);border-radius:10px;padding:14px 16px;margin:14px 0;font-size:.92rem;}
+.tipbox b{color:var(--brand);}
+
+/* Flashcards */
+.fcwrap{display:flex;flex-direction:column;align-items:center;gap:16px;}
+.fc{width:min(440px,92vw);height:240px;perspective:1000px;cursor:pointer;}
+.fcin{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d;}
+.fc.flip .fcin{transform:rotateY(180deg);}
+.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:16px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.15);}
+.front{background:linear-gradient(135deg,var(--brand2),var(--brand3));color:#fff;}
+.front .word{font-size:1.7rem;font-weight:700;color:var(--gold2);}
+.front .pos2{margin-top:8px;font-size:.85rem;color:#f2d9df;}
+.back{background:#fff;border:3px solid var(--gold);transform:rotateY(180deg);}
+.back .arb{font-size:1.5rem;color:#1d6b4f;font-weight:700;direction:rtl;}
+.back .exb{margin-top:10px;font-size:.92rem;color:#6b5b60;font-style:italic;}
+.fcbtns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+.btn{background:var(--brand);color:var(--gold2);border:none;padding:10px 22px;border-radius:24px;font-weight:700;cursor:pointer;font-size:.92rem;transition:.2s;}
+.btn:hover{transform:translateY(-2px);}
+.btn.gold{background:var(--gold);color:var(--brand3);}
+.btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand);}
+.fccount{color:#6b5b60;font-size:.9rem;}
+
+/* Sort game */
+.pool{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0;min-height:46px;background:#fff;border:2px dashed #d8c4b0;border-radius:12px;padding:12px;}
+.chip{background:var(--brand);color:#fff;padding:7px 16px;border-radius:18px;cursor:pointer;font-size:.9rem;transition:.15s;border:2px solid transparent;}
+.chip:hover{background:var(--brand2);}
+.chip.sel{background:var(--gold);color:var(--brand3);border-color:var(--brand);font-weight:700;}
+.buckets{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;}
+.bucket{background:#fff;border:2px solid var(--brand);border-radius:12px;min-height:130px;padding:10px;cursor:pointer;transition:.15s;}
+.bucket:hover{background:var(--goldlt);}
+.bucket h4{color:var(--brand);text-align:center;border-bottom:2px solid var(--gold);padding-bottom:5px;margin-bottom:8px;}
+.bucket .bin{display:flex;flex-wrap:wrap;gap:5px;}
+.mini{font-size:.78rem;padding:4px 10px;border-radius:12px;background:var(--goldlt);border:1px solid var(--gold);}
+.mini.ok{background:#dff3e6;border-color:var(--green);color:var(--green);}
+.mini.bad{background:#fdecea;border-color:var(--red);color:var(--red);}
+
+/* Gapfill */
+.gap{background:#fff;border:1px solid #ecdfd0;border-radius:10px;padding:13px 15px;margin-bottom:10px;font-size:.98rem;line-height:1.7;}
+.gap select{padding:4px 8px;border:2px solid var(--brand);border-radius:8px;font-size:.92rem;background:var(--goldlt);color:var(--brand);font-weight:600;}
+.gap.ok{border-left:5px solid var(--green);}
+.gap.bad{border-left:5px solid var(--red);}
+.gap .fb{font-size:.82rem;margin-top:4px;display:none;}
+.gap.ok .fb{display:block;color:var(--green);}
+.gap.bad .fb{display:block;color:var(--red);}
+
+/* Match */
+.mcols{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:640px;margin:0 auto;}
+.mitem{background:#fff;border:2px solid var(--brand);border-radius:10px;padding:11px;cursor:pointer;text-align:center;font-weight:600;transition:.15s;font-size:.95rem;}
+.mitem:hover{background:var(--goldlt);}
+.mitem.sel{background:var(--gold);color:var(--brand3);}
+.mitem.done{background:var(--brand);color:var(--gold2);border-color:var(--gold);cursor:default;opacity:.85;}
+.mitem.err{background:#fdecea;border-color:var(--red);}
+
+/* Word List Table */
+.tbl-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;}
+.vtable{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+.vtable th{background:var(--brand);color:var(--gold2);padding:10px 12px;text-align:left;font-size:.92rem;}
+.vtable td{padding:9px 12px;border-bottom:1px solid #f0e7da;font-size:.9rem;vertical-align:top;}
+.vtable tr:nth-child(even) td{background:#fcf8f2;}
+.vtable .c-en{font-weight:700;color:var(--brand);}
+.vtable .c-ar{color:#1d6b4f;font-weight:600;direction:rtl;text-align:right;font-size:1rem;}
+.vtable .c-ex{color:#6b5b60;font-style:italic;font-size:.85rem;}
+.vtable .c-ex b{color:var(--brand);font-style:normal;}
+.cat-row td{background:var(--goldlt)!important;font-weight:700;color:var(--brand);}
+.print-head{display:none;}
+
+/* Quiz */
+.qbox{background:#fff;border:1px solid #ecdfd0;border-radius:14px;padding:22px;box-shadow:0 2px 8px rgba(0,0,0,.06);max-width:680px;margin:0 auto;}
+.qprog{height:10px;background:#efe4d6;border-radius:6px;overflow:hidden;margin-bottom:16px;}
+.qprog div{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));width:0;transition:.3s;}
+.qnum{color:var(--grey);font-size:.85rem;margin-bottom:6px;}
+.qtext{font-size:1.08rem;font-weight:700;color:var(--brand);margin-bottom:14px;line-height:1.5;}
+.opt{display:block;width:100%;text-align:left;background:var(--cream);border:2px solid #e2d3c2;border-radius:10px;padding:11px 14px;margin-bottom:9px;cursor:pointer;font-size:.95rem;transition:.15s;}
+.opt:hover{border-color:var(--brand);}
+.opt.right{background:#dff3e6;border-color:var(--green);font-weight:700;}
+.opt.wrong{background:#fdecea;border-color:var(--red);}
+.result{text-align:center;padding:26px;}
+.result .big{font-size:3rem;}
+.result h3{color:var(--brand);font-size:1.5rem;margin:8px 0;}
+.medal{display:inline-block;background:var(--gold);color:var(--brand3);font-weight:800;padding:8px 24px;border-radius:24px;margin-top:8px;}
+
+.checkrow{text-align:center;margin-top:16px;}
+.scoreline{text-align:center;font-weight:700;color:var(--brand);margin-top:10px;font-size:1.02rem;}
+
+/* Certificate */
+.cert-setup{max-width:520px;margin:0 auto;text-align:center;background:#fff;border:1px solid #ecdfd0;border-radius:14px;padding:24px;}
+.cert-setup input{width:100%;padding:11px;border:2px solid var(--brand);border-radius:10px;font-size:1rem;margin:12px 0;text-align:center;}
+.lockmsg{background:var(--goldlt);border:1px solid var(--gold);border-radius:10px;padding:14px;margin-top:12px;color:#8a6d1a;font-size:.92rem;}
+.certificate{max-width:760px;margin:18px auto 0;background:linear-gradient(135deg,#fffdf8,#fbf3e4);border:3px solid var(--gold);border-radius:14px;padding:6px;box-shadow:0 6px 22px rgba(0,0,0,.14);}
+.cert-inner{border:2px solid var(--brand);border-radius:10px;padding:34px 30px;text-align:center;position:relative;}
+.cert-inner::before{content:"";position:absolute;inset:10px;border:1px solid var(--gold);border-radius:6px;pointer-events:none;}
+.cert-logo{font-size:.8rem;letter-spacing:3px;color:var(--gold);font-weight:700;text-transform:uppercase;}
+.cert-title{font-size:1.9rem;color:var(--brand);font-weight:800;margin:6px 0 2px;}
+.cert-sub{color:#8a6d1a;font-weight:600;letter-spacing:1px;margin-bottom:18px;}
+.cert-line{color:#6b5b60;font-size:.95rem;}
+.cert-name{font-size:2rem;color:var(--brand);font-weight:800;margin:10px 0;border-bottom:2px dotted var(--gold);display:inline-block;padding:0 24px 4px;}
+.cert-course{font-size:1.15rem;color:var(--brand2);font-weight:700;margin:14px 0 4px;}
+.cert-arb{direction:rtl;color:#1d6b4f;font-weight:600;margin-bottom:14px;}
+.cert-foot{display:flex;justify-content:space-between;align-items:flex-end;margin-top:30px;gap:14px;flex-wrap:wrap;}
+.cert-foot div{flex:1;min-width:150px;}
+.cert-foot .lbl{font-size:.75rem;color:#9a8f93;border-top:1px solid var(--brand);padding-top:5px;}
+.cert-foot .val{font-weight:700;color:var(--brand);font-size:.95rem;margin-bottom:2px;}
+.cert-seal{width:80px;height:80px;border-radius:50%;background:radial-gradient(circle,var(--gold2),var(--gold));border:3px solid var(--brand);display:flex;align-items:center;justify-content:center;color:var(--brand3);font-weight:800;font-size:.7rem;text-align:center;line-height:1.1;margin:0 auto;box-shadow:0 2px 6px rgba(0,0,0,.2);}
+
+footer{background:var(--brand3);color:#f2d9df;text-align:center;padding:18px;font-size:.88rem;border-top:4px solid var(--gold);}
+footer b{color:var(--gold2);}
+
+.confetti{position:fixed;top:-12px;border-radius:3px;z-index:999;pointer-events:none;animation:cfall linear forwards;}
+@keyframes cfall{to{transform:translateY(105vh) rotate(720deg);}}
+
+/* ============ PRINT ============ */
+@media print{
+  body{background:#fff;}
+  header,.scorebar,nav,footer,.tbl-actions,.cert-setup,.checkrow,.no-print{display:none!important;}
+  main{max-width:100%;padding:0;}
+  section{display:none!important;}
+  section.printing{display:block!important;}
+  .print-head{display:block!important;text-align:center;margin-bottom:14px;}
+  .print-head h2{color:#6a1b2a;font-size:1.3rem;}
+  .print-head p{color:#555;font-size:.85rem;}
+  .vtable{box-shadow:none;border:1px solid #999;}
+  .vtable th{background:#6a1b2a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .cat-row td{background:#f7ecd1!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .certificate{box-shadow:none;margin:0 auto;page-break-inside:avoid;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .cert-inner::before,.certificate,.cert-seal{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  @page{margin:1.2cm;}
+}
+
+@media(max-width:600px){
+  header h1{font-size:1.2rem}
+  .mcols{grid-template-columns:1fr 1fr;gap:8px}
+  .mitem{font-size:.8rem;padding:9px 6px}
+  .vtable .c-ex{display:none;}
+  .cert-name{font-size:1.5rem;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>HCT IELTS Prep Course – <span>Vocabulary Learning – Lesson 2</span></h1>
+  <p>Academic Writing Task 1 – Report Language · لغة الكتابة الأكاديمية – المهمة الأولى</p>
+  <div class="badge-target">🎯 Target: Band 6.0 Academic</div>
+</header>
+
+<div class="scorebar">
+  <div class="stat">⭐ Points: <b id="pts">0</b></div>
+  <div class="stat">🏅 Badges: <b id="bdg">0</b>/4</div>
+  <button onclick="saveProgress()">💾 Save</button>
+  <button class="ghost" onclick="document.getElementById('loadFile').click()">📂 Load</button>
+  <button class="ghost" onclick="resetAll()">🔄 Reset</button>
+  <input type="file" id="loadFile" accept=".json" style="display:none" onchange="loadProgress(event)">
+</div>
+
+<nav id="nav">
+  <button class="pill active" data-t="learn">📖 Learn</button>
+  <button class="pill" data-t="flash">🃏 Flashcards</button>
+  <button class="pill" data-t="sort">🗂️ Word Sort</button>
+  <button class="pill" data-t="gapfill">✏️ Gap-Fill</button>
+  <button class="pill" data-t="match">🔗 Arabic Match</button>
+  <button class="pill" data-t="wordlist">📋 Word List</button>
+  <button class="pill" data-t="quiz">🏆 Final Quiz</button>
+  <button class="pill" data-t="cert">🎓 Certificate</button>
+</nav>
+
+<main>
+
+<!-- ============ LEARN ============ -->
+<section id="learn" class="show">
+  <span class="h2">📖 Learn the Task 1 Report Language</span>
+  <p class="sub">This lesson gives you the language to <b>write</b> a Band 6 Task 1 report — from the introduction to the data. Study each phrase with its Arabic meaning and example, then practise in the activity tabs!</p>
+  <div class="tipbox">💡 <b>Band 6 Structure:</b> A strong Task 1 answer has 4 parts → <b>1) Introduction</b> (paraphrase the title) · <b>2) Overview</b> (the main trends, <i>no numbers</i>) · <b>3) &amp; 4) Body paragraphs</b> (grouped details <i>with</i> data). Use the language banks below for each part.</div>
+  <div id="learnArea"></div>
+</section>
+
+<!-- ============ FLASHCARDS ============ -->
+<section id="flash">
+  <span class="h2">🃏 Flashcards</span>
+  <p class="sub">Click the card to flip it and see the Arabic meaning. Use Shuffle to test yourself in random order.</p>
+  <div class="fcwrap">
+    <div class="fc" id="fc" onclick="this.classList.toggle('flip')">
+      <div class="fcin">
+        <div class="face front"><div class="word" id="fcWord"></div><div class="pos2" id="fcPos"></div><div style="margin-top:14px;font-size:.8rem;color:#e6b9c4">👆 Click to flip</div></div>
+        <div class="face back"><div class="arb" id="fcAr"></div><div class="exb" id="fcEx"></div></div>
+      </div>
+    </div>
+    <div class="fccount" id="fcCount"></div>
+    <div class="fcbtns">
+      <button class="btn ghost" onclick="fcMove(-1)">⬅ Previous</button>
+      <button class="btn gold" onclick="fcShuffle()">🔀 Shuffle</button>
+      <button class="btn" onclick="fcMove(1)">Next ➡</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SORT ============ -->
+<section id="sort">
+  <span class="h2">🗂️ Word Sort – Trend Direction</span>
+  <p class="sub">Click a word, then click the correct box: is it going up, down, staying flat, or moving up &amp; down? Sort all 16! (+5 points each)</p>
+  <div class="pool" id="pool"></div>
+  <div class="buckets">
+    <div class="bucket" data-c="Increase"><h4>📈 Increase الارتفاع</h4><div class="bin"></div></div>
+    <div class="bucket" data-c="Decrease"><h4>📉 Decrease الانخفاض</h4><div class="bin"></div></div>
+    <div class="bucket" data-c="No Change"><h4>➡️ No Change الثبات</h4><div class="bin"></div></div>
+    <div class="bucket" data-c="Fluctuation"><h4>〰️ Fluctuation التذبذب</h4><div class="bin"></div></div>
+  </div>
+  <div class="scoreline" id="sortScore"></div>
+  <div class="checkrow"><button class="btn ghost" onclick="sortReset()">🔄 Restart</button></div>
+</section>
+
+<!-- ============ GAPFILL ============ -->
+<section id="gapfill">
+  <span class="h2">✏️ Gap-Fill – Build a Task 1 Report</span>
+  <p class="sub">Choose the correct word to complete each Writing Task 1 sentence, then press Check.</p>
+  <div id="gapArea"></div>
+  <div class="checkrow">
+    <button class="btn gold" onclick="gapCheck()">✔ Check Answers</button>
+    <button class="btn ghost" onclick="gapBuild()">🔄 Reset</button>
+  </div>
+  <div class="scoreline" id="gapScore"></div>
+</section>
+
+<!-- ============ MATCH ============ -->
+<section id="match">
+  <span class="h2">🔗 Arabic Matching Game</span>
+  <p class="sub">Click an English word, then click its Arabic meaning. Match all 8 pairs!</p>
+  <div class="mcols" id="mcols"></div>
+  <div class="scoreline" id="matchScore"></div>
+  <div class="checkrow"><button class="btn ghost" onclick="matchBuild()">🔄 Restart</button></div>
+</section>
+
+<!-- ============ WORD LIST TABLE ============ -->
+<section id="wordlist">
+  <div class="print-head">
+    <h2>HCT IELTS Prep Course – Vocabulary Learning – Lesson 2</h2>
+    <p>Academic Writing Task 1 – Report Language · لغة الكتابة الأكاديمية · Designed by: Nazila Motahari</p>
+  </div>
+  <span class="h2">📋 Complete Word List</span>
+  <p class="sub">Your full Task 1 report-language bank with Arabic meanings, grouped by report function. Save it for revision, print it, or download it as a spreadsheet.</p>
+  <div class="tbl-actions">
+    <button class="btn gold" onclick="printSection('wordlist')">🖨️ Print / Save as PDF</button>
+    <button class="btn ghost" onclick="downloadCSV()">⬇️ Download as CSV (Excel)</button>
+  </div>
+  <table class="vtable" id="vtable"><tbody></tbody></table>
+</section>
+
+<!-- ============ QUIZ ============ -->
+<section id="quiz">
+  <span class="h2">🏆 Final Quiz – 20 Questions</span>
+  <p class="sub">Pass mark: <b>80% (16/20)</b>. Good luck! بالتوفيق</p>
+  <div class="qbox" id="qbox"></div>
+</section>
+
+<!-- ============ CERTIFICATE ============ -->
+<section id="cert">
+  <span class="h2">🎓 Certificate of Completion</span>
+  <p class="sub">Pass the Final Quiz (80%+) to unlock your certificate, type your name, then print or save it as a PDF.</p>
+  <div class="cert-setup no-print">
+    <label style="font-weight:600;color:var(--brand)">Enter your full name:</label>
+    <input type="text" id="certName" placeholder="e.g. Ahmed Al Mansoori" oninput="renderCert()">
+    <div id="certStatus"></div>
+    <button class="btn gold" id="certPrintBtn" onclick="printSection('cert')" style="display:none">🖨️ Print / Save Certificate as PDF</button>
+  </div>
+  <div id="certArea"></div>
+</section>
+
+</main>
+
+<footer>HCT IELTS Prep Course · Lesson 2: Academic Writing Task 1 Language · <b>Designed by: Nazila Motahari</b></footer>
+
+<script>
+/* ================= CATEGORIES ================= */
+const CATS=[
+ ["intro","📊 Introducing the Graph","تقديم الرسم البياني"],
+ ["over","🔭 Overview Language","الملخّص العام"],
+ ["comp","⚖️ Comparison – Same / Different","المقارنة"],
+ ["inc","📈 Increase","الارتفاع"],
+ ["dec","📉 Decrease","الانخفاض"],
+ ["nc","➡️ No Change / Stable","الثبات"],
+ ["fluc","〰️ Fluctuation","التذبذب"],
+ ["hilo","🔺 High & Low Points","أعلى وأدنى نقطة"],
+ ["int","⚡ Intensity – Adverbs & Adjectives","شدّة التغيّر"],
+ ["approx","≈ Approximation","التقريب"],
+ ["time","🕒 Time Phrases","عبارات الزمن"],
+ ["pct","％ Percentages & Fractions","النِّسب والكسور"]
+];
+const CATLABEL={};CATS.forEach(c=>CATLABEL[c[0]]=c[1].replace(/^[^A-Za-z]+/,'').trim());
+
+/* ================= DATA ================= */
+const VOCAB=[
+ // Introduction
+ {en:"shows",cat:"intro",ar:"يُظهر / يبيّن",ex:"The line graph <b>shows</b> changes in population from 2000 to 2020."},
+ {en:"illustrates",cat:"intro",ar:"يوضّح",ex:"The chart <b>illustrates</b> the number of tourists visiting Dubai."},
+ {en:"compares",cat:"intro",ar:"يقارن",ex:"The bar graph <b>compares</b> sales in four countries."},
+ {en:"depicts",cat:"intro",ar:"يصوّر / يجسّد",ex:"The diagram <b>depicts</b> the process of making paper."},
+ {en:"presents",cat:"intro",ar:"يعرض / يقدّم",ex:"The table <b>presents</b> data on energy use."},
+ {en:"represents",cat:"intro",ar:"يمثّل",ex:"The pie chart <b>represents</b> household spending."},
+ {en:"gives information on",cat:"intro",ar:"يقدّم معلومات عن",ex:"The figure <b>gives information on</b> internet use."},
+ {en:"outlines",cat:"intro",ar:"يوجز / يبيّن الخطوط العريضة",ex:"The graph <b>outlines</b> trends in car ownership."},
+ {en:"summarizes",cat:"intro",ar:"يلخّص",ex:"The diagram <b>summarizes</b> the main stages."},
+ {en:"indicates",cat:"intro",ar:"يشير إلى",ex:"The data <b>indicates</b> a rise in temperatures."},
+ {en:"a line graph",cat:"intro",ar:"رسم بياني خطّي",ex:"The <b>line graph</b> shows price changes over time."},
+ {en:"a bar chart",cat:"intro",ar:"رسم بياني بالأعمدة",ex:"The <b>bar chart</b> compares five categories."},
+ {en:"a pie chart",cat:"intro",ar:"رسم بياني دائري",ex:"The <b>pie chart</b> shows the percentage of each group."},
+ {en:"a table",cat:"intro",ar:"جدول",ex:"The <b>table</b> lists the figures for each year."},
+ {en:"a diagram",cat:"intro",ar:"مخطّط / رسم توضيحي",ex:"The <b>diagram</b> explains how a machine works."},
+ {en:"a flow chart / process",cat:"intro",ar:"مخطّط انسيابي / عملية",ex:"The <b>flow chart</b> shows the steps in the process."},
+ // Overview
+ {en:"Overall,",cat:"over",ar:"بشكل عام / إجمالاً",ex:"<b>Overall,</b> the figures increased over the period."},
+ {en:"Generally speaking,",cat:"over",ar:"بصفة عامة",ex:"<b>Generally speaking,</b> sales rose across the decade."},
+ {en:"In general,",cat:"over",ar:"على العموم",ex:"<b>In general,</b> the trend was upward."},
+ {en:"As a general trend,",cat:"over",ar:"كاتجاه عام",ex:"<b>As a general trend,</b> prices fell after 2010."},
+ {en:"As can be seen,",cat:"over",ar:"كما يتّضح",ex:"<b>As can be seen,</b> the line rose steadily."},
+ {en:"It can be clearly seen that",cat:"over",ar:"يمكن أن يُلاحَظ بوضوح أنّ",ex:"<b>It can be clearly seen that</b> demand grew."},
+ {en:"It is obvious that",cat:"over",ar:"من الواضح أنّ",ex:"<b>It is obvious that</b> the city expanded rapidly."},
+ {en:"At first glance,",cat:"over",ar:"للوهلة الأولى",ex:"<b>At first glance,</b> the data appears complex."},
+ // Comparison
+ {en:"the same as",cat:"comp",ar:"مماثل لـ / نفس",ex:"Sales in 2010 were <b>the same as</b> in 2011."},
+ {en:"identical to",cat:"comp",ar:"مطابق لـ",ex:"The 2015 figure was <b>identical to</b> the previous year."},
+ {en:"equal to",cat:"comp",ar:"مساوٍ لـ",ex:"Exports were <b>equal to</b> imports in 2008."},
+ {en:"almost the same as",cat:"comp",ar:"تقريباً نفس القيمة",ex:"Prices were <b>almost the same as</b> the year before."},
+ {en:"nearly the same as",cat:"comp",ar:"يكاد يكون مماثلاً",ex:"The two values were <b>nearly the same</b>."},
+ {en:"about the same as",cat:"comp",ar:"حوالي نفس القيمة",ex:"Costs were <b>about the same as</b> last year."},
+ {en:"the reverse is the case",cat:"comp",ar:"العكس هو الصحيح",ex:"For women, <b>the reverse is the case</b>."},
+ {en:"the opposite / quite the reverse",cat:"comp",ar:"العكس تماماً",ex:"Men preferred tea; for women it was <b>the opposite</b>."},
+ // Increase
+ {en:"to rise / a rise",cat:"inc",ar:"يرتفع / ارتفاع",ex:"Prices <b>rose</b> from $10 to $25."},
+ {en:"to increase / an increase",cat:"inc",ar:"يزداد / زيادة",ex:"Sales <b>increased</b> steadily over ten years."},
+ {en:"to climb / a climb",cat:"inc",ar:"يصعد / صعود",ex:"Temperatures <b>climbed</b> throughout the summer."},
+ {en:"to go up",cat:"inc",ar:"يرتفع",ex:"The figures <b>went up</b> sharply after 2010."},
+ {en:"to grow / growth",cat:"inc",ar:"ينمو / نمو",ex:"The economy <b>grew</b> rapidly in this period."},
+ {en:"to improve / an improvement",cat:"inc",ar:"يتحسّن / تحسّن",ex:"Results <b>improved</b> year on year."},
+ {en:"to soar",cat:"inc",ar:"يحلّق / يرتفع بشدّة (سريع)",ex:"Profits <b>soared</b> in 2020."},
+ {en:"to rocket / skyrocket",cat:"inc",ar:"يرتفع بشكل صاروخي (سريع)",ex:"House prices <b>rocketed</b> after 2021."},
+ {en:"to surge / a surge",cat:"inc",ar:"يرتفع فجأة وبقوة (سريع)",ex:"Demand <b>surged</b> during the sale."},
+ {en:"to jump / a jump",cat:"inc",ar:"يقفز / قفزة (سريع)",ex:"Sales <b>jumped</b> in December."},
+ {en:"to double",cat:"inc",ar:"يتضاعف (×2)",ex:"The number <b>doubled</b> in five years."},
+ {en:"to triple",cat:"inc",ar:"يتضاعف ثلاث مرّات (×3)",ex:"Visitor numbers <b>tripled</b> by 2015."},
+ // Decrease
+ {en:"to fall / a fall",cat:"dec",ar:"يهبط / هبوط",ex:"Sales <b>fell</b> during the winter months."},
+ {en:"to decrease / a decrease",cat:"dec",ar:"ينخفض / انخفاض",ex:"The number of smokers <b>decreased</b> gradually."},
+ {en:"to decline / a decline",cat:"dec",ar:"يتراجع / تراجع",ex:"Cinema attendance <b>declined</b> after 2010."},
+ {en:"to drop / a drop",cat:"dec",ar:"ينخفض / انخفاض",ex:"Prices <b>dropped</b> by 10% in March."},
+ {en:"to go down",cat:"dec",ar:"ينخفض",ex:"The figures <b>went down</b> in 2009."},
+ {en:"to reduce / a reduction",cat:"dec",ar:"يقلّل / تخفيض",ex:"Costs were <b>reduced</b> by half."},
+ {en:"to plunge",cat:"dec",ar:"ينخفض بشدّة وبسرعة (سريع)",ex:"Shares <b>plunged</b> during the crisis."},
+ {en:"to plummet",cat:"dec",ar:"يهوي بشدّة (سريع)",ex:"Profits <b>plummeted</b> to a record low."},
+ {en:"to collapse / a collapse",cat:"dec",ar:"ينهار / انهيار (سريع)",ex:"The market <b>collapsed</b> in 2008."},
+ {en:"to take a nosedive / dive",cat:"dec",ar:"يهوي بسرعة (سريع)",ex:"Sales <b>took a nosedive</b> after summer."},
+ {en:"to halve",cat:"dec",ar:"ينخفض إلى النصف",ex:"The figure <b>halved</b> within a decade."},
+ {en:"to dip",cat:"dec",ar:"ينخفض قليلاً (بطيء)",ex:"Sales <b>dipped</b> slightly in February."},
+ {en:"to slump / a slump",cat:"dec",ar:"يتراجع / ركود (بطيء)",ex:"Sales <b>slumped</b> after the holidays."},
+ // No Change
+ {en:"to remain stable",cat:"nc",ar:"يبقى مستقراً",ex:"The birth rate <b>remained stable</b> at 2%."},
+ {en:"to remain constant",cat:"nc",ar:"يبقى ثابتاً",ex:"The rate <b>remained constant</b> for five years."},
+ {en:"to remain steady",cat:"nc",ar:"يبقى منتظماً",ex:"Numbers <b>remained steady</b> throughout."},
+ {en:"to stay the same",cat:"nc",ar:"يبقى كما هو",ex:"The figure <b>stayed the same</b> at 60%."},
+ {en:"to be unchanged",cat:"nc",ar:"دون تغيير",ex:"The total <b>was unchanged</b> between 2010 and 2012."},
+ {en:"to level off / out",cat:"nc",ar:"يستقر بعد تغيّر",ex:"The line rose, then <b>levelled off</b> at $6m."},
+ {en:"to plateau / reach a plateau",cat:"nc",ar:"يصل إلى مرحلة ثبات",ex:"Growth <b>plateaued</b> after 2018."},
+ {en:"to remain static",cat:"nc",ar:"يبقى جامداً / ثابتاً",ex:"Wages <b>remained static</b> over the period."},
+ // Fluctuation
+ {en:"to fluctuate",cat:"fluc",ar:"يتذبذب",ex:"The exchange rate <b>fluctuated</b> all year."},
+ {en:"to rise and fall",cat:"fluc",ar:"يرتفع وينخفض",ex:"The figures <b>rose and fell</b> repeatedly."},
+ {en:"erratically / erratic",cat:"fluc",ar:"بشكل غير منتظم",ex:"The line moved <b>erratically</b>."},
+ {en:"irregularly / irregular",cat:"fluc",ar:"بشكل غير منتظم",ex:"Sales changed <b>irregularly</b> over the decade."},
+ {en:"to change sporadically",cat:"fluc",ar:"يتغيّر بشكل متقطّع",ex:"Demand <b>changed sporadically</b>."},
+ {en:"intermittently",cat:"fluc",ar:"بشكل متقطّع",ex:"The values changed <b>intermittently</b>."},
+ // High & Low
+ {en:"to reach a peak / the peak",cat:"hilo",ar:"يبلغ الذروة",ex:"Sales <b>reached a peak</b> of $8m in July."},
+ {en:"to hit the peak",cat:"hilo",ar:"يصل إلى الذروة",ex:"Prices <b>hit the peak</b> of $90 in 2015."},
+ {en:"the highest point",cat:"hilo",ar:"أعلى نقطة",ex:"It reached <b>the highest point</b> in 2015."},
+ {en:"to reach the apex",cat:"hilo",ar:"يصل إلى القمّة",ex:"The curve <b>reached the apex</b> in June."},
+ {en:"to culminate at",cat:"hilo",ar:"يبلغ ذروته عند",ex:"Numbers <b>culminated at</b> 9 million."},
+ {en:"the lowest point",cat:"hilo",ar:"أدنى نقطة",ex:"It fell to <b>the lowest point</b> in 2009."},
+ {en:"to hit rock bottom",cat:"hilo",ar:"يصل إلى الحضيض",ex:"Sales <b>hit rock bottom</b> in winter."},
+ {en:"to reach the nadir",cat:"hilo",ar:"يصل إلى أدنى نقطة / الحضيض",ex:"Profits <b>reached the nadir</b> in 2008."},
+ // Intensity
+ {en:"dramatically / dramatic",cat:"int",ar:"بشكل كبير جداً (شديد)",ex:"Sales rose <b>dramatically</b>, from 1m to 9m."},
+ {en:"sharply / sharp",cat:"int",ar:"بشكل حاد (شديد)",ex:"Prices fell <b>sharply</b> after the crisis."},
+ {en:"significantly / significant",cat:"int",ar:"بشكل ملحوظ (شديد)",ex:"Demand grew <b>significantly</b> last year."},
+ {en:"considerably / considerable",cat:"int",ar:"إلى حدّ كبير (شديد)",ex:"Costs fell <b>considerably</b> in 2008."},
+ {en:"substantially / substantial",cat:"int",ar:"بشكل كبير (شديد)",ex:"Output rose <b>substantially</b>."},
+ {en:"rapidly / rapid",cat:"int",ar:"بسرعة (شديد)",ex:"The city grew <b>rapidly</b> after 2000."},
+ {en:"moderately / moderate",cat:"int",ar:"باعتدال (متوسط)",ex:"Prices rose <b>moderately</b> over the period."},
+ {en:"gradually / gradual",cat:"int",ar:"تدريجياً (متوسط/بطيء)",ex:"Numbers fell <b>gradually</b> over 20 years."},
+ {en:"progressively / progressive",cat:"int",ar:"بشكل متزايد تدريجياً",ex:"Use increased <b>progressively</b>."},
+ {en:"steadily / steady",cat:"int",ar:"بثبات / بانتظام (منتظم)",ex:"The figure grew <b>steadily</b> over the decade."},
+ {en:"slightly / slight",cat:"int",ar:"قليلاً (طفيف)",ex:"Sales dipped <b>slightly</b> in March."},
+ {en:"fractionally / marginally",cat:"int",ar:"بشكل طفيف جداً (طفيف)",ex:"It rose <b>fractionally</b>, by just 0.2%."},
+ {en:"mildly / mild",cat:"int",ar:"بشكل خفيف (طفيف)",ex:"Temperatures rose <b>mildly</b> in spring."},
+ {en:"slowly / slow",cat:"int",ar:"ببطء (طفيف)",ex:"The trend changed <b>slowly</b>."},
+ // Approximation
+ {en:"about",cat:"approx",ar:"حوالي",ex:"Sales reached <b>about</b> 50% of the total."},
+ {en:"approximately",cat:"approx",ar:"تقريباً",ex:"There were <b>approximately</b> 2 million visitors."},
+ {en:"around",cat:"approx",ar:"حوالي",ex:"<b>Around</b> 30% of people chose option A."},
+ {en:"almost / nearly",cat:"approx",ar:"تقريباً / يكاد",ex:"<b>Almost</b> 100% of homes had electricity."},
+ {en:"just over",cat:"approx",ar:"أكثر بقليل من",ex:"The figure was <b>just over</b> 60% (about 61%)."},
+ {en:"just under",cat:"approx",ar:"أقل بقليل من",ex:"It was <b>just under</b> 40% (about 39%)."},
+ {en:"roughly",cat:"approx",ar:"تقريباً",ex:"<b>Roughly</b> one third preferred tea."},
+ {en:"well above / well below",cat:"approx",ar:"أعلى / أقل بكثير من",ex:"Sales were <b>well above</b> the average."},
+ {en:"more or less",cat:"approx",ar:"تقريباً / إلى حدٍّ ما",ex:"The two figures were <b>more or less</b> the same."},
+ // Time
+ {en:"between … and …",cat:"time",ar:"بين … و…",ex:"The graph covers the years <b>between</b> 2000 <b>and</b> 2010."},
+ {en:"from … to …",cat:"time",ar:"من … إلى…",ex:"Sales rose <b>from</b> 1990 <b>to</b> 2000."},
+ {en:"in (year / month)",cat:"time",ar:"في (سنة/شهر)",ex:"The peak occurred <b>in</b> 2015."},
+ {en:"on (day / date)",cat:"time",ar:"في (يوم/تاريخ)",ex:"Sales were highest <b>on</b> Monday."},
+ {en:"during",cat:"time",ar:"خلال",ex:"Demand fell <b>during</b> the summer."},
+ {en:"over the period",cat:"time",ar:"على مدى الفترة",ex:"<b>Over the period</b>, the trend was upward."},
+ {en:"by (year)",cat:"time",ar:"بحلول",ex:"<b>By</b> 2020, the figure had doubled."},
+ {en:"over the past / next years",cat:"time",ar:"خلال السنوات الماضية / القادمة",ex:"Use grew <b>over the past</b> decade."},
+ // Percentages
+ {en:"… percent of",cat:"pct",ar:"… بالمئة من",ex:"Fifty <b>percent of</b> users were under 25."},
+ {en:"a half (½)",cat:"pct",ar:"نصف",ex:"<b>Half</b> of the sample preferred option A."},
+ {en:"a third (⅓)",cat:"pct",ar:"ثُلث",ex:"<b>A third</b> of respondents disagreed."},
+ {en:"a quarter (¼)",cat:"pct",ar:"رُبع",ex:"<b>A quarter</b> of the total came from Asia."},
+ {en:"a fifth (⅕)",cat:"pct",ar:"خُمس",ex:"<b>A fifth</b> of students walked to school."},
+ {en:"a tenth (1/10)",cat:"pct",ar:"عُشر",ex:"<b>A tenth</b> of the budget went on travel."},
+ {en:"one out of five",cat:"pct",ar:"واحد من كل خمسة",ex:"<b>One out of five</b> people owned a car."},
+ {en:"in proportion",cat:"pct",ar:"كنسبة",ex:"The data is shown <b>in proportion</b> in the pie chart."}
+];
+
+let points=0,badges={},quizPassed=false,quizBest=0;
+function refreshBar(){document.getElementById('pts').textContent=points;document.getElementById('bdg').textContent=Object.keys(badges).length;}
+function addPts(n){points+=n;refreshBar();autoSave();}
+function award(key){if(!badges[key]){badges[key]=1;refreshBar();confetti();autoSave();}}
+function confetti(){const cols=['#d4af37','#f0c75e','#6a1b2a','#86223a','#fff'];for(let i=0;i<70;i++){const c=document.createElement('div');c.className='confetti';c.style.left=Math.random()*100+'vw';c.style.width=c.style.height=(6+Math.random()*8)+'px';c.style.background=cols[i%cols.length];c.style.animationDuration=(2+Math.random()*2)+'s';document.body.appendChild(c);setTimeout(()=>c.remove(),4200);}}
+
+/* ====== SAVE / LOAD / RESET ====== */
+const LSKEY='hct_ielts_vocab_l2';
+function stateObj(){return{points,badges,quizPassed,quizBest,name:document.getElementById('certName').value||'',saved:new Date().toISOString()};}
+function autoSave(){try{localStorage.setItem(LSKEY,JSON.stringify(stateObj()));}catch(e){}}
+function applyState(s){
+  points=s.points||0;badges=s.badges||{};quizPassed=!!s.quizPassed;quizBest=s.quizBest||0;
+  if(s.name)document.getElementById('certName').value=s.name;
+  refreshBar();renderCert();
+}
+function saveProgress(){
+  const data=JSON.stringify(stateObj(),null,2);
+  const blob=new Blob([data],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+  a.download='IELTS-Vocab-Lesson2-progress.json';a.click();URL.revokeObjectURL(a.href);
+  autoSave();
+}
+function loadProgress(ev){
+  const f=ev.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=()=>{try{applyState(JSON.parse(r.result));autoSave();alert('✅ Progress loaded successfully!');}catch(e){alert('⚠️ Could not read that file.');}};
+  r.readAsText(f);ev.target.value='';
+}
+function resetAll(){
+  if(!confirm('Reset everything? This will clear your points, badges, quiz result and certificate name so you can start again.'))return;
+  try{localStorage.removeItem(LSKEY);}catch(e){}
+  points=0;badges={};quizPassed=false;quizBest=0;
+  document.getElementById('certName').value='';
+  refreshBar();
+  sortReset();gapBuild();matchBuild();quizStart();renderCert();
+  document.querySelector('.pill[data-t="learn"]').click();
+}
+
+/* ====== NAV ====== */
+document.querySelectorAll('.pill').forEach(p=>p.onclick=()=>{
+  document.querySelectorAll('.pill').forEach(x=>x.classList.remove('active'));
+  p.classList.add('active');
+  document.querySelectorAll('main section').forEach(s=>s.classList.remove('show'));
+  document.getElementById(p.dataset.t).classList.add('show');
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+
+/* ====== LEARN ====== */
+const la=document.getElementById('learnArea');
+CATS.forEach(([key,label,arc])=>{
+  const words=VOCAB.filter(v=>v.cat===key);
+  la.insertAdjacentHTML('beforeend',`<div class="cat-title"><span>${label} <small>· ${arc}</small></span><small>${words.length} items</small></div>
+  <div class="grid">${words.map(v=>`<div class="wcard"><span class="en">${v.en}</span><div class="arr">${v.ar}</div><div class="ex">${v.ex}</div></div>`).join('')}</div>`);
+});
+
+/* ====== WORD LIST TABLE ====== */
+(function buildTable(){
+  const tb=document.querySelector('#vtable tbody');let n=0;
+  tb.insertAdjacentHTML('beforeend','<tr><th>#</th><th>English</th><th>Arabic · العربية</th><th>Example (Task 1)</th></tr>');
+  CATS.forEach(([key,label,arc])=>{
+    tb.insertAdjacentHTML('beforeend',`<tr class="cat-row"><td colspan="4">${label} · ${arc}</td></tr>`);
+    VOCAB.filter(v=>v.cat===key).forEach(v=>{
+      n++;
+      tb.insertAdjacentHTML('beforeend',`<tr><td>${n}</td><td class="c-en">${v.en}</td><td class="c-ar">${v.ar}</td><td class="c-ex">${v.ex}</td></tr>`);
+    });
+  });
+})();
+function downloadCSV(){
+  const rows=[['No','Category','English','Arabic','Example']];
+  let n=0;
+  CATS.forEach(([key,label])=>{
+    VOCAB.filter(v=>v.cat===key).forEach(v=>{n++;rows.push([n,CATLABEL[key],v.en,v.ar,v.ex.replace(/<[^>]+>/g,'')]);});
+  });
+  const csv=rows.map(r=>r.map(c=>'"'+String(c).replace(/"/g,'""')+'"').join(',')).join('\r\n');
+  const blob=new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8;'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+  a.download='IELTS-Vocab-Lesson2-WordList.csv';a.click();URL.revokeObjectURL(a.href);
+}
+
+/* ====== PRINT HELPER ====== */
+function printSection(id){
+  const sec=document.getElementById(id);
+  sec.classList.add('printing');
+  window.print();
+  setTimeout(()=>{sec.classList.remove('printing');},600);
+}
+
+/* ====== FLASHCARDS ====== */
+let deck=[...VOCAB],fci=0;
+function fcShow(){const v=deck[fci];document.getElementById('fc').classList.remove('flip');
+ setTimeout(()=>{document.getElementById('fcWord').textContent=v.en;document.getElementById('fcPos').textContent=CATLABEL[v.cat];
+ document.getElementById('fcAr').textContent=v.ar;document.getElementById('fcEx').innerHTML=v.ex;
+ document.getElementById('fcCount').textContent=`Card ${fci+1} of ${deck.length}`;},160);}
+function fcMove(d){fci=(fci+d+deck.length)%deck.length;fcShow();}
+function fcShuffle(){deck.sort(()=>Math.random()-.5);fci=0;fcShow();}
+fcShow();
+
+/* ====== SORT (Trend Direction) ====== */
+const SORTW=[["to soar","Increase"],["to climb","Increase"],["a surge","Increase"],["to double","Increase"],
+["to plummet","Decrease"],["to slump","Decrease"],["a drop","Decrease"],["to halve","Decrease"],
+["to plateau","No Change"],["remained stable","No Change"],["to level off","No Change"],["was unchanged","No Change"],
+["to fluctuate","Fluctuation"],["rise and fall","Fluctuation"],["erratically","Fluctuation"],["sporadically","Fluctuation"]];
+let selChip=null,sortDone=0;
+function sortReset(){
+ sortDone=0;selChip=null;
+ document.querySelectorAll('.bucket .bin').forEach(b=>b.innerHTML='');
+ document.getElementById('sortScore').textContent='';
+ const pool=document.getElementById('pool');pool.innerHTML='';
+ [...SORTW].sort(()=>Math.random()-.5).forEach(([w,c])=>{
+   const ch=document.createElement('div');ch.className='chip';ch.textContent=w;ch.dataset.c=c;
+   ch.onclick=()=>{document.querySelectorAll('.chip').forEach(x=>x.classList.remove('sel'));ch.classList.add('sel');selChip=ch;};
+   pool.appendChild(ch);});
+}
+document.querySelectorAll('.bucket').forEach(b=>b.onclick=()=>{
+ if(!selChip)return;
+ const ok=selChip.dataset.c===b.dataset.c;
+ const m=document.createElement('span');m.className='mini '+(ok?'ok':'bad');m.textContent=(ok?'✔ ':'✖ ')+selChip.textContent;
+ if(ok){b.querySelector('.bin').appendChild(m);selChip.remove();addPts(5);sortDone++;
+   if(sortDone===SORTW.length){document.getElementById('sortScore').textContent='🎉 Excellent! All 16 words sorted! ممتاز';award('sort');}
+ }else{b.querySelector('.bin').appendChild(m);setTimeout(()=>m.remove(),900);selChip.classList.remove('sel');}
+ selChip=null;
+});
+sortReset();
+
+/* ====== GAPFILL ====== */
+const GAPS=[
+ {s:"The line graph ___ the number of visitors to three museums.",o:["shows","show","showing"],a:"shows",fb:"Use present simple to describe a visual: shows ✔"},
+ {s:"___, the figures increased over the whole period.",o:["Overall","Overly","Overalls"],a:"Overall",fb:"Overview signal word: Overall, … ✔"},
+ {s:"Sales ___ dramatically, from 2 million to 9 million.",o:["rose","rise","risen"],a:"rose",fb:"Past simple verb: rose ✔"},
+ {s:"There was a ___ fall in attendance, from 90% to 30%.",o:["sharp","slight","gentle"],a:"sharp",fb:"A big change needs a strong adjective: sharp ✔"},
+ {s:"About 61% can be described as ___ 60%.",o:["just over","just under","well below"],a:"just over",fb:"61% is a little more than 60%: just over ✔"},
+ {s:"Between 2010 and 2015, prices ___ stable at $20.",o:["remained","reduced","reached"],a:"remained",fb:"No-change verb + adjective: remained stable ✔"},
+ {s:"The graph shows changes ___ 2000 and 2020.",o:["between","during","from"],a:"between",fb:"between … and … ✔"},
+ {s:"Exactly 50% of the total can be written as ___.",o:["a half","a third","a quarter"],a:"a half",fb:"50% = a half (½) ✔"},
+ {s:"The price ___ throughout the year, rising and falling.",o:["fluctuated","plateaued","remained"],a:"fluctuated",fb:"Up-and-down movement: fluctuated ✔"},
+ {s:"Visitor numbers ___ a peak of 5 million in July.",o:["reached","arrived","got"],a:"reached",fb:"Collocation: reached a peak ✔"}
+];
+function gapBuild(){
+ const ga=document.getElementById('gapArea');ga.innerHTML='';document.getElementById('gapScore').textContent='';
+ GAPS.forEach((g,i)=>{
+  const opts=[...g.o].sort(()=>Math.random()-.5);
+  ga.insertAdjacentHTML('beforeend',`<div class="gap" id="g${i}">${i+1}. ${g.s.replace('___',`<select id="gs${i}"><option value="">— choose —</option>${opts.map(o=>`<option>${o}</option>`).join('')}</select>`)}<div class="fb" id="gf${i}"></div></div>`);
+ });
+}
+function gapCheck(){
+ let sc=0;
+ GAPS.forEach((g,i)=>{
+  const box=document.getElementById('g'+i),sel=document.getElementById('gs'+i).value,fb=document.getElementById('gf'+i);
+  box.classList.remove('ok','bad');
+  if(sel===g.a){box.classList.add('ok');fb.textContent=g.fb;sc++;}
+  else{box.classList.add('bad');fb.textContent='✖ Correct answer: '+g.a;}
+ });
+ addPts(sc*3);
+ document.getElementById('gapScore').textContent=`Score: ${sc}/10 ${sc>=8?'🎉 Great job!':'– review the Learn tab and try again!'}`;
+ if(sc>=8)award('gap');
+}
+gapBuild();
+
+/* ====== MATCH ====== */
+const PAIRS=[["to soar","يرتفع بشدّة"],["to plummet","يهوي بشدّة"],["to fluctuate","يتذبذب"],["to remain stable","يبقى مستقراً"],["to reach a peak","يبلغ الذروة"],["gradually","تدريجياً"],["approximately","تقريباً"],["Overall","بشكل عام / إجمالاً"]];
+let mSel=null,mLeft=0;
+function matchBuild(){
+ mSel=null;mLeft=PAIRS.length;
+ const en=[...PAIRS].sort(()=>Math.random()-.5),ar=[...PAIRS].sort(()=>Math.random()-.5);
+ const mc=document.getElementById('mcols');mc.innerHTML='';document.getElementById('matchScore').textContent='';
+ const colE=document.createElement('div'),colA=document.createElement('div');
+ en.forEach(p=>{const d=document.createElement('div');d.className='mitem';d.textContent=p[0];d.dataset.k=p[0];d.dataset.side='e';colE.appendChild(d);});
+ ar.forEach(p=>{const d=document.createElement('div');d.className='mitem ar';d.textContent=p[1];d.dataset.k=p[0];d.dataset.side='a';colA.appendChild(d);});
+ mc.appendChild(colE);mc.appendChild(colA);
+ mc.querySelectorAll('.mitem').forEach(d=>d.onclick=()=>{
+  if(d.classList.contains('done'))return;
+  if(!mSel){mSel=d;d.classList.add('sel');return;}
+  if(mSel===d){d.classList.remove('sel');mSel=null;return;}
+  if(mSel.dataset.side===d.dataset.side){mSel.classList.remove('sel');mSel=d;d.classList.add('sel');return;}
+  if(mSel.dataset.k===d.dataset.k){
+    mSel.classList.remove('sel');mSel.classList.add('done');d.classList.add('done');addPts(5);mLeft--;
+    if(mLeft===0){document.getElementById('matchScore').textContent='🎉 All pairs matched! أحسنت';award('match');}
+  }else{
+    d.classList.add('err');mSel.classList.add('err');const a=mSel;setTimeout(()=>{a.classList.remove('err','sel');d.classList.remove('err');},650);
+  }
+  mSel=null;
+ });
+}
+matchBuild();
+
+/* ====== QUIZ ====== */
+const QUIZ=[
+ {q:"Which verb is used to INTRODUCE a graph?",o:["shows","soars","plummets","fluctuates"],a:0},
+ {q:"'The ___ chart shows the percentage of each group.'",o:["pie","line","flow","bar"],a:0},
+ {q:"Which word begins an OVERVIEW sentence?",o:["Overall,","In 2010,","About 50%","Firstly the value of"],a:0},
+ {q:"'Identical to' means the values are…",o:["exactly the same","completely different","slightly higher","fluctuating"],a:0},
+ {q:"Which verb shows a FAST increase?",o:["to climb","to soar","to dip","to remain"],a:1},
+ {q:"Which verb shows a FAST decrease?",o:["to plummet","to rise","to level off","to climb"],a:0},
+ {q:"'The figure remained static' means it…",o:["rose sharply","stayed the same","fell slowly","doubled"],a:1},
+ {q:"Which word describes UPS AND DOWNS?",o:["fluctuate","plateau","soar","halve"],a:0},
+ {q:"'Reached the nadir' refers to the…",o:["highest point","lowest point","middle","average"],a:1},
+ {q:"'Hit the peak' refers to the…",o:["lowest point","highest point","starting point","no change"],a:1},
+ {q:"Which adverb shows a RAPID / HUGE change?",o:["slightly","gradually","dramatically","mildly"],a:2},
+ {q:"Which adverb shows a SLIGHT change?",o:["sharply","substantially","fractionally","rapidly"],a:2},
+ {q:"'Gradually' describes a change that is…",o:["very fast and sudden","moderate and slow","unchanged","fluctuating"],a:1},
+ {q:"'Approximately 50%' is closest in meaning to…",o:["exactly 50%","about 50%","over 90%","under 10%"],a:1},
+ {q:"'Just under 40%' means…",o:["a little more than 40%","a little less than 40%","exactly 40%","double 40%"],a:1},
+ {q:"Which phrase shows TIME?",o:["between 2000 and 2010","a sharp rise","well above","the peak"],a:0},
+ {q:"'One out of two' is the same as…",o:["a quarter","a half","a third","a fifth"],a:1},
+ {q:"'A fifth of students' means…",o:["1/2","1/5","1/10","1/4"],a:1},
+ {q:"Choose the correct introduction sentence:",o:["The graph show data about sales.","The graph shows data about sales.","The graph showing data about sales.","The graph showed data about sales."],a:1},
+ {q:"'Overall, sales fell, whereas profits rose.' The word 'whereas' shows a…",o:["similarity","contrast","time order","peak"],a:1}
+];
+let qi=0,qScore=0,qLocked=false;
+function quizStart(){qi=0;qScore=0;quizShow();}
+function quizShow(){
+ const qb=document.getElementById('qbox'),q=QUIZ[qi];qLocked=false;
+ qb.innerHTML=`<div class="qprog"><div style="width:${qi/QUIZ.length*100}%"></div></div>
+ <div class="qnum">Question ${qi+1} of ${QUIZ.length} · Score: ${qScore}</div>
+ <div class="qtext">${q.q}</div>
+ ${q.o.map((o,i)=>`<button class="opt" onclick="quizAns(this,${i})">${String.fromCharCode(65+i)}. ${o}</button>`).join('')}`;
+}
+function quizAns(btn,i){
+ if(qLocked)return;qLocked=true;
+ const q=QUIZ[qi],opts=document.querySelectorAll('.opt');
+ opts[q.a].classList.add('right');
+ if(i===q.a){qScore++;addPts(5);}else btn.classList.add('wrong');
+ setTimeout(()=>{qi++;qi<QUIZ.length?quizShow():quizEnd();},1100);
+}
+function quizEnd(){
+ const pct=Math.round(qScore/QUIZ.length*100),pass=pct>=80;
+ if(qScore>quizBest)quizBest=qScore;
+ if(pass){quizPassed=true;award('quiz');confetti();}
+ autoSave();renderCert();
+ document.getElementById('qbox').innerHTML=`<div class="result">
+  <div class="big">${pass?'🏆':'📚'}</div>
+  <h3>${pass?'Congratulations! مبروك':'Keep Practising! حاول مرة أخرى'}</h3>
+  <p style="font-size:1.15rem">You scored <b>${qScore}/${QUIZ.length}</b> (${pct}%)</p>
+  ${pass?'<div class="medal">⭐ Task 1 Language Master – Lesson 2 Complete!</div><p style="margin-top:12px;color:#2e8b57;font-weight:600">🎓 Your Certificate is now unlocked — open the Certificate tab!</p>':'<p style="color:#777;margin-top:8px">Pass mark is 80%. Review the Learn tab and flashcards, then try again — you can do it!</p>'}
+  <div style="margin-top:18px"><button class="btn gold" onclick="quizStart()">🔄 ${pass?'Try for a Perfect Score':'Try Again'}</button></div>
+ </div>`;
+}
+quizStart();
+
+/* ====== CERTIFICATE ====== */
+function renderCert(){
+ const name=(document.getElementById('certName').value||'').trim();
+ const status=document.getElementById('certStatus');
+ const btn=document.getElementById('certPrintBtn');
+ const area=document.getElementById('certArea');
+ if(!quizPassed){
+   status.innerHTML='<div class="lockmsg">🔒 Complete the Final Quiz with at least 80% to unlock your certificate.</div>';
+   btn.style.display='none';area.innerHTML='';return;
+ }
+ if(!name){
+   status.innerHTML='<div class="lockmsg">✏️ Type your name above to generate your certificate.</div>';
+   btn.style.display='none';area.innerHTML='';return;
+ }
+ status.innerHTML='';btn.style.display='inline-block';
+ const date=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+ const pct=Math.round(quizBest/QUIZ.length*100);
+ area.innerHTML=`<div class="certificate"><div class="cert-inner">
+   <div class="cert-logo">Higher Colleges of Technology</div>
+   <div class="cert-title">Certificate of Completion</div>
+   <div class="cert-sub">IELTS PREP COURSE</div>
+   <div class="cert-line">This certifies that</div>
+   <div class="cert-name">${name.replace(/[<>]/g,'')}</div>
+   <div class="cert-line">has successfully completed</div>
+   <div class="cert-course">Vocabulary Learning – Lesson 2: Academic Writing Task 1 Language</div>
+   <div class="cert-arb">لغة الكتابة الأكاديمية – المهمة الأولى</div>
+   <div class="cert-line">with a final quiz score of <b>${pct}%</b> · Achievement: <b>Task 1 Language Master 🏅</b></div>
+   <div class="cert-seal" style="margin-top:18px">IELTS<br>BAND 6<br>★</div>
+   <div class="cert-foot">
+     <div><div class="val">${date}</div><div class="lbl">Date</div></div>
+     <div><div class="val">Nazila Motahari</div><div class="lbl">Instructor · Designed by</div></div>
+   </div>
+ </div></div>`;
+}
+
+/* ====== INIT ====== */
+(function init(){try{const s=localStorage.getItem(LSKEY);if(s)applyState(JSON.parse(s));}catch(e){}refreshBar();renderCert();})();
+</script>
+</body>
+</html>
